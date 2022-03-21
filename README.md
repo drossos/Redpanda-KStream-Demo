@@ -12,9 +12,9 @@ Once you have the application running locally, you can generate sample messages 
 ## Example
 Following the guide found [here](https://docs.redpanda.com/docs/deployment/guide-rpk-container/). We will spin up a local Redpanda cluster to be used for testing the KStreams application.
 
-Assuming you have Redpanda installed locally (if not refer to the [Redpanda installation page](https://redpanda.com/platform/)). Spin up a new 3 node cluster with the command:
+Assuming you have Redpanda installed locally (if not refer to the [Redpanda installation page](https://redpanda.com/platform/)).
 ```shell
-rpk container start -n 3
+rpk container start
 ```
 Using the broker addresses and ports provided when running the previous command, now create the topics `input` and `output` using RPK. (Note the ports used by the brokers may be different for each user)
 ```shell
@@ -26,7 +26,9 @@ Now can set the `BOOTSTRAP_SERVERS` and `SCHEMA_REGISTRY` using your container's
 export BOOTSTRAP_SERVERS=127.0.0.1:53875,127.0.0.1:53881,127.0.0.1:53880
 export SCHEMA_REGISTRY=http://127.0.0.1:8081
 ```
- Then run this application and generate sample messages by going to [http://localhost:8080/generate](http://localhost:8080/generate).
+> Note that port `8081` might not be available for your Schema Registry and therefore your cluster will use another port. To know what port that is run `docker container port rp-node-0` and look for `8081/tcp -> 0.0.0.0:<schmea-registry-port>`. Use that provided port in your `SCHEMA_REGISTRY` environment variable.
+
+Then run this application and generate sample messages by going to [http://localhost:8080/generate](http://localhost:8080/generate).
 
 When done with this test run to spin down the container
 ```shell
