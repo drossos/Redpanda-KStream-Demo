@@ -1,0 +1,15 @@
+spring:
+ application:
+  name: redpanda-kstream-demo
+ kafka:
+     bootstrap-servers: ${BOOTSTRAP_SERVERS:localhost:9092}
+     properties:
+         schema.registry.url: ${SCHEMA_REGISTRY:http://localhost:8081}
+     streams:
+      properties:
+       default.key.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+       default.value.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+       application.server: ${POD_IP:localhost}:${SERVER_PORT:8080}
+
+kafka:
+  topics: input,output

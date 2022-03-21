@@ -1,0 +1,22 @@
+{
+  "namespace": "com.demo.redpanda.redpandakstreamdemo.generated",
+  "type": "record",
+  "name": "Input",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "Name of user"
+    },
+    {
+      "name": "phoneNumber",
+      "type": "string",
+      "doc": "Phone number of the user"
+    },
+    {
+      "name": "age",
+      "type": "int",
+      "doc": "Age of the user"
+    }
+  ]
+}

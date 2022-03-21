@@ -1,0 +1,12 @@
+{
+  "namespace": "com.demo.redpanda.redpandakstreamdemo.generated",
+  "type": "record",
+  "name": "Output",
+  "fields": [
+    {
+      "name": "contactInfo",
+      "type": "string",
+      "doc": "Formatted user info string"
+    }
+  ]
+}

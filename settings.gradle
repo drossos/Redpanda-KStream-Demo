@@ -1,0 +1,13 @@
+pluginManagement {
+	repositories {
+		maven { url 'https://packages.confluent.io/maven' }
+		maven { url 'https://plugins.gradle.org/' }
+		maven { url 'https://repo.spring.io/milestone' }
+		maven { url 'https://repo.spring.io/snapshot' }
+		maven {
+			url 'https://packages.confluent.io/maven/'
+		}
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'redpandakstreamdemo'
