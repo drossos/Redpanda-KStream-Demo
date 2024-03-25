@@ -1,5 +1,5 @@
 # Redpanda KStream Demo 
-This demo is in reference to the following [article](medium.com)
+This demo is in reference to the following [article](https://medium.com/@shahirdaya/first-impressions-of-redpanda-6dd0d860ecfd)
 
 ## Running the App
 This application is to be used to test the compatibility of your Redpanda cluster. It will use two topics `input` and `output` where messages published to `input` will get mapped to `output`. There are only two environment variables that must be set for this application to function properly. 
